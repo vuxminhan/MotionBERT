@@ -35,7 +35,7 @@ if torch.cuda.is_available():
 
 print('Loading checkpoint', opts.evaluate)
 checkpoint = torch.load(opts.evaluate, map_location=lambda storage, loc: storage)
-model_backbone.load_state_dict(checkpoint['model_pos'], strict=True)
+model_backbone.load_state_dict(checkpoint['model_pos'], strict=False)
 model_pos = model_backbone
 model_pos.eval()
 testloader_params = {
